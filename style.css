@@ -1,0 +1,256 @@
+* {
+  box-sizing: border-box;
+  font-family: "Comfortaa", sans-serif;
+}
+
+body {
+  background: #94bbe9;
+  display: flex;
+  justify-content: center;
+}
+.container {
+  margin-top: 30px;
+  padding: 20px;
+  display: flex;
+  flex-wrap: wrap;
+  max-width: 700px;
+  background-color: #3f5efb47;
+  border-radius: 6px;
+
+  .header {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    width: 100%;
+    margin-bottom: 20px;
+
+    .icon {
+      margin-right: 15px;
+
+      i {
+        font-size: 30px;
+        color: #fb0032;
+      }
+    }
+
+    .title {
+      margin: 10px 0;
+      h2 {
+        margin: 0;
+        user-select: none;
+      }
+    }
+  }
+}
+.form {
+  width: 100%;
+  background-color: #94bbe9;
+  padding: 15px;
+  margin-bottom: 20px;
+  border-radius: 6px;
+  display: flex;
+  align-items: center;
+}
+.form input[type="text"] {
+  user-select: none;
+  width: 85%;
+  padding: 10px;
+  border: none;
+  margin-right: 10px;
+  font-size: 18px;
+  border-radius: 6px;
+  font-size: 20px;
+  height: 40px;
+
+  &::placeholder {
+    font-size: 16px;
+  }
+
+  &.emptyEffect {
+    border: 2px dashed #fb0032;
+    animation: move-to 1s linear forwards;
+  }
+}
+.form input[type="text"]:focus {
+  outline: none;
+  opacity: 0.9;
+}
+.form input[type="submit"] {
+  background-color: #fb0032;
+  color: white;
+  font-weight: bold;
+  padding: 10px;
+  border-radius: 6px;
+  border: none;
+  transition: 0.3s;
+  cursor: pointer;
+  height: 40px;
+}
+.form input[type="submit"]:hover {
+  background-color: #fb0032b2;
+}
+.dlt-all:focus {
+  outline: none;
+}
+.tasks {
+  min-width: 100%;
+  min-height: 400px;
+  padding: 15px;
+  border-radius: 6px;
+  position: relative;
+  background-image: url(./imgs/undraw_chore_list_re_2lq8.svg);
+  background-size: contain;
+  background-position: 0 2px;
+  background-repeat: no-repeat;
+  border: 2px solid #94bbe9;
+}
+.tasks .taskItem {
+  display: flex;
+  align-items: center;
+  background-color: white;
+  padding: 15px;
+  border-radius: 10px;
+  transition: 0.3s;
+  user-select: none;
+  cursor: pointer;
+  opacity: 0.85;
+
+  &:not(:last-child) {
+    margin-bottom: 15px;
+  }
+
+  &.completed {
+    background-color: #fb003292;
+    color: #fff;
+  }
+
+  .checkIconDiv {
+    margin-right: 10px;
+    i {
+      font-size: 22px;
+    }
+  }
+
+  .taskTitle {
+    font-size: 20px;
+    flex: 1;
+  }
+
+  .dltIconDiv {
+    i {
+      font-size: 22px;
+    }
+  }
+
+  .iconDiv {
+    width: 40px;
+    height: 40px;
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+    border-radius: 0 10px 10px 0;
+    cursor: pointer;
+    position: absolute;
+    z-index: 100;
+    right: 15px;
+  }
+}
+.tasks .task:not(:last-child) {
+  margin-bottom: 15px;
+}
+.tasks .task:hover {
+  background-color: #fb00328b;
+  color: #fff;
+}
+.tasks .task.done {
+  opacity: 0.5;
+}
+.tasks .task i {
+  font-size: 20px;
+  z-index: 90;
+}
+
+.social {
+  display: flex;
+  justify-content: space-evenly;
+  align-items: center;
+  width: 100%;
+  margin-top: 20px;
+
+  .dlt-all {
+    background-color: #fb0032;
+    color: white;
+    font-weight: bold;
+    font-size: 16px;
+    padding: 10px 15px;
+    border: none;
+    border-radius: 6px;
+    transition: 0.3s;
+    user-select: none;
+    cursor: pointer;
+    flex: 1;
+
+    &:hover {
+      background-color: #fb0032b2;
+    }
+  }
+  p {
+    margin: 0 70px;
+    font-weight: bold;
+    user-select: none;
+    flex: 1;
+
+    i {
+      color: #fb0032b2;
+      font-size: 18px;
+    }
+  }
+
+  .media {
+    a {
+      text-decoration: none;
+      padding: 5px;
+      width: 35px;
+      height: 35px;
+      margin-right: 5px;
+      display: inline-flex;
+      justify-content: center;
+      align-items: center;
+      border-radius: 50%;
+      background-color: #ffffffb1;
+      transition: 0.3s;
+
+      &:hover {
+        background-color: #ffffffdf;
+      }
+
+      i {
+        font-size: 20px;
+      }
+
+      &:first-child i {
+        color: #0288d1;
+      }
+
+      &:nth-child(2) i {
+        color: #cc5de8;
+      }
+
+      &:last-child i {
+        color: #40c351;
+      }
+    }
+  }
+}
+
+@keyframes move-to {
+  0%,
+  40%,
+  100% {
+    transform: translateX(0);
+  }
+  20%,
+  60% {
+    transform: translateX(10px);
+  }
+}

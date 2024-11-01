@@ -1,0 +1,4 @@
+- click on add task button 
+-- if it's full {
+  
+}
